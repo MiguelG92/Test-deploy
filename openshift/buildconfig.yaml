@@ -5,7 +5,7 @@ metadata:
 spec:
   source:
     git:
-      uri: https://github.com/yourusername/your-repo.git
+      uri: https://github.com/MiguelG92/Test-deploy.git
       ref: main  # or the branch you want to deploy
   strategy:
     type: Source
