@@ -14,5 +14,8 @@ spec:
       containers:
         - name: test-deploy
           image: test-deploy:latest
+          securityContext:
+             runAsUser: 0
           ports:
             - containerPort: 3000
+
