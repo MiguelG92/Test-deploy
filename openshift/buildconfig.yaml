@@ -1,0 +1,19 @@
+apiVersion: build.openshift.io/v1
+kind: BuildConfig
+metadata:
+  name: test-deploy-build
+spec:
+  source:
+    git:
+      uri: https://github.com/yourusername/your-repo.git
+      ref: main  # or the branch you want to deploy
+  strategy:
+    type: Source
+    sourceStrategy:
+      from:
+        kind: ImageStreamTag
+        name: nodejs:14
+  output:
+    to:
+      kind: ImageStreamTag
+      name: test-deploy:latest
