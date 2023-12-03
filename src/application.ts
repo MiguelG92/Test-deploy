@@ -23,7 +23,9 @@ export class TodoListApplication extends BootMixin(
 ) {
   constructor(options: ApplicationConfig = {}) {
     super(options);
-
+  // Set the base path to /v2
+    this.basePath('/v2');
+    
     // Set up the custom sequence
     this.sequence(MySequence);
 
