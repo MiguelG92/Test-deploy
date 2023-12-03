@@ -23,14 +23,16 @@ export class TodoListApplication extends BootMixin(
 ) {
   constructor(options: ApplicationConfig = {}) {
     super(options);
-  // Set the base path to /v2
-    this.basePath('/v2');
+    
+  // Read base path from environment variable, default to '/'
+    const basePath = process.env.BASE_PATH || '/';
+    this.basePath(basePath);
     
     // Set up the custom sequence
     this.sequence(MySequence);
 
     // Set up default home page
-    this.static('/v2', path.join(__dirname, '../public'));
+    this.static('/', path.join(__dirname, '../public'));
 
     // Customize @loopback/rest-explorer configuration here
     this.configure(RestExplorerBindings.COMPONENT).to({
