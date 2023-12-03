@@ -25,7 +25,7 @@ export class TodoListApplication extends BootMixin(
     super(options);
     
   // Read base path from environment variable, default to '/'
-    const basePath = process.env.BASE_PATH || '/';
+    const basePath = process.env.PREFIX || '/';
     this.basePath(basePath);
     
     // Set up the custom sequence
